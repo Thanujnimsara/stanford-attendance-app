@@ -1,0 +1,20 @@
+ANDROID APP SETUP  (app eke text okkoma English)
+
+1. Android Studio eken "Open" -> me folder eka (AttendanceApp). Gradle sync wenakan inna.
+2. app/src/main/assets/mobilefacenet.tflite  <- MobileFaceNet model eka methanata danna.
+   - Float32 model ekak wenna ona (input 112x112x3, output 192 wage embedding).
+3. API_URL eka Api.kt eke kalinma oyage Cloudflare URL ekata set karala thiyenawa:
+   https://stanford-attendance.attendance-079.workers.dev/api
+   (wenas nam: app/src/main/java/lk/stanford/attendance/Api.kt)
+4. Real phone ekakin Run karanna (USB debugging on). Emulator eke front camera / GPS hariyata neha.
+5. APK: Build > Build APK(s)
+
+LOGO: app icon eka saha login / home screen walata Global Stanford logo eka damma
+      (res/drawable-nodpi/logo.png, res/mipmap-*/ic_launcher*.png).
+
+APP EKE PENENNE
+- Branch eka, duty welawa, weekly day off
+- Office area athule da kiyala (branch eke GPS radius eka admin panel eke set karanawa)
+- Today status (present / late / day off / leave)
+- This month: present, absent, late arrivals (free days), late deduction, short leave used
+- Leave balance: Sick / Casual / Official

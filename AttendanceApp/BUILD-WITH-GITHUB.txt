@@ -1,0 +1,29 @@
+APK EKA GITHUB EKEN HADANNA (Android Studio install karanna ona nehe)
+
+A) GitHub account + private repository
+ 1. github.com ekata sign up (free) karala login wenna.
+ 2. Uda dakunu paththe "+" > New repository. Name: stanford-attendance-app. PRIVATE select karanna. Create.
+    (PRIVATE wenna ona: project eke signing keystore eka thiyenawa.)
+
+B) Files upload karanna
+ 3. Repository page eke "uploading an existing file" link eka click karanna.
+ 4. PC eke AttendanceApp folder eka athule thiyena okkoma (app, gradle, .github, settings.gradle.kts, build.gradle.kts, ...)
+    select karala browser ekata drag & drop karanna. "Commit changes" click karanna.
+    - ".github" folder eka (hidden wage) upload wunada kiyala balanna: repository eke ".github/workflows/build-apk.yml" thiyenna ona.
+      Nethnam: Add file > Create new file > name eka ".github/workflows/build-apk.yml" kiyala type karala
+      (slash type karaddi folder hadenawa), build-apk.yml.txt eke thiyena okkoma paste karala Commit.
+ 5. FACE MODEL: repository eke app/src/main/assets/ folder ekata gihin (Add file > Upload files) mobilefacenet.tflite eka upload karanna.
+    (float32 model: input 112x112x3, output 192.)
+
+C) Build karanna
+ 6. "Actions" tab > "Build Android APK" > "Run workflow" > Run. Minutes 5-10k inna (palaweni parata).
+ 7. Green tick ekak awama build eka click karala yata "Artifacts" eke "stanford-attendance-apk" download karanna (zip).
+    Unzip karoth app-release.apk eka thiyenawa. Eka staff ta yawanna.
+
+AWULAK AWOTH
+ - Red X nam: build eke "Build release APK" step eka open karala error eka copy karala mata yawanna.
+ - "mobilefacenet.tflite is missing": B-5 step eka nawatha karanna.
+
+NOTES
+ - Signing keystore eka (app/attendance.p12) backup ekak thiyaganna. Eka nathi unoth app update karaddi staff okkoma uninstall karanna wenawa.
+ - Code wenas kala, repo ekata file upload karala Actions eke nawatha Run workflow.
